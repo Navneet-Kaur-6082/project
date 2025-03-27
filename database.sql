@@ -1,5 +1,5 @@
-CREATE DATABASE bookstore;
-USE bookstore;
+CREATE DATABASE shelfy_db;
+USE shelfy_db;
 
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -34,7 +34,7 @@ CREATE TABLE orders (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
--CREATE TABLE order_items (
+CREATE TABLE order_items (
     order_item_id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT,
     book_id INT,
