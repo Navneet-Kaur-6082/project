@@ -1,0 +1,125 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #020202;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Checkout container */
+.checkout-container {
+    width: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+    color: white;
+}
+.checkout-container a{
+
+    color: white;
+    text-align: center;
+}
+
+/* Heading */
+h2 {
+    color: #ff4500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h4{
+    text-align: right;
+    color: #f0f0f0;
+    font-weight: bold;
+    margin-right: 15px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin-top: 50px;
+}
+
+/* Cart Items */
+
+.cart-items ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-items li {
+    display: flex;
+    justify-content: space-between; 
+    padding: 10px;
+    transition: background 0.3s;
+    color: #f0f0f0;
+}
+
+hr{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.quan{
+    color: white;
+    margin-left: 10px;
+}
+
+.cart-items p {
+    padding-right: 10px;
+    color: #ffffff;
+    text-align: right;
+}
+
+/* Form styles */
+form {
+    text-align: left;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #ffffff;
+    
+}
+
+textarea {
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+    transition: border-color 0.3s;
+    margin-top: 20px;
+    
+}
+
+textarea:focus {
+    border-color: #ffffff;
+    outline: none;
+}
+
+/* Checkout Button */
+.checkout-btn {
+    width: 100%;
+    background: linear-gradient(90deg, #ff8c00, #ff4500);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+.checkout-btn:hover {
+    background: linear-gradient(90deg, #ff4500, #ff8c00);
+}
+
+

@@ -1,12 +1,6 @@
 <?php
 include '../database/db.php';
 session_start(); 
-
-if (!isset($_SESSION['user_id'])) {
-    echo "<p>Please log in to add books to your cart.</p>";
-    exit; 
-}
-
 $search = isset($_GET['search']) ? $_GET['search'] : '';
 $category = isset($_GET['category']) ? $_GET['category'] : '';
 
