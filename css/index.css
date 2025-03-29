@@ -7,7 +7,6 @@ body {
     
 }
 
-/* Container */
 .container1 {
     width: 70%;
     margin: 30px auto;
@@ -16,7 +15,6 @@ body {
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
-
 
 input, select {
     width: 48%;
@@ -32,7 +30,6 @@ input, select {
 input::placeholder {
     color: #ff4500;
   }
-/* Book List */
 .book-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two books per row */
@@ -41,8 +38,6 @@ input::placeholder {
     padding: 0;
     
 }
-
-/* Book Card */
 .book {
     background:white ;
     padding: 15px;
@@ -61,7 +56,6 @@ input::placeholder {
     border: 3px solid #ff4500; ;
 }
 
-/* Book Title */
 .book h3 {
     color: #323232;
     margin-bottom: 10px;
