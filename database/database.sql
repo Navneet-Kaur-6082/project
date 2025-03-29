@@ -1,3 +1,4 @@
+
 CREATE DATABASE shelfy_db;
 USE shelfy_db;
 
@@ -21,7 +22,7 @@ CREATE TABLE books (
     price DECIMAL(10,2) NOT NULL,
     stock INT NOT NULL,
     description TEXT,
-    cover_image VARCHAR(255),
+    cover_image VARCHAR(255) NOT NULL DEFAULT '/project/imgs/',
     created_at DATE DEFAULT CURRENT_DATE
 );
 

@@ -1,0 +1,127 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    
+}
+
+/* Container */
+.container1 {
+    width: 70%;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+input, select {
+    width: 48%;
+    padding: 12px;
+    font-size: 16px;
+    color: #ff4500;
+    background: rgba(255, 255, 255, 0.2);
+    border: 3px solid white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+input::placeholder {
+    color: #ff4500;
+  }
+/* Book List */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two books per row */
+    gap: 20px;
+    margin-top: 20px;
+    padding: 0;
+    
+}
+
+/* Book Card */
+.book {
+    background:white ;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    width: 95%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #323232;
+}
+
+.book:hover {
+    transform: scale(1.02);
+    border: 3px solid #ff4500; ;
+}
+
+/* Book Title */
+.book h3 {
+    color: #323232;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+
+.book p {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+
+}
+
+
+img {
+    max-width: 200px; 
+    height: 250px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block; 
+    margin: 20px auto; 
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #ff8c00, #ff4500);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: #f8f9fa !important;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #ff8c00 !important;
+}
+
+.logout-link {
+    color: #dc3545 !important;
+    font-weight: 600;
+}
+
+.logout-link:hover {
+    color: #ff073a !important;
+}
+
+.navbar {
+    padding: 12px 0;
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+ 
