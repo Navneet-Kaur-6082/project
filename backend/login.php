@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->fetch();
         if (password_verify($password, $hashed_password)) {
             $_SESSION['user_id'] = $user_id;
-            header('Location: ../frontend/index.html');
+            header('Location: accounts.php');
             exit();
         } else {
             echo "<p class='error'>Invalid password.</p>";

@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.account-container, .tracking-container {
+    width: 80%;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    box-shadow: 0px 0px 10px #ccc;
+    border-radius: 8px;
+    text-align: center;
+}
+
+h2 {
+    color: #ff4500;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #ffffff;
+}
+
+th {
+    background: #ff4500;
+    color: white;
+}
+
+.track-btn {
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+.track-btn:hover {
+    color: #ff4500;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    padding: 10px;
+    background: linear-gradient(90deg, #ff8c00, #ff4500);
+    color: white;
+    border-radius: 5px;
+}
+
+.back-btn:hover {
+    background: linear-gradient(90deg, #ff4500, #ff8c00);
+}
+
+.user-info {
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.user-info h3 {
+    margin-top: 20px;
+    color: #ff4500;
+
+}
+
+.user-info p {
+    margin: 10px 0;
+    font-size: 16px;
+}

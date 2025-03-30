@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php session_start();
 include '../database/db.php';
 
 // Redirect if user is not logged in
@@ -32,32 +31,37 @@ $total_price = 0;
 
     <div class="checkout-container">
         <h2>Checkout</h2>
+        <?php if ($result->num_rows == 0): ?>
+            <p>Your cart is empty.</p>
+            <a href="../frontend/index.html" class="back-btn">Go Back to Homepage</a>
+        <?php else: ?>
+            <div class="cart-items">
+                <h4> Price</h4>
+                <ul>
+                    <?php while ($row = $result->fetch_assoc()): ?>
+                        <li>
+                            <span><?php echo $row['title']; ?></span>
+                            <span>$<?php echo number_format($row['price'] * $row['quantity'], 2); ?></span>
+                        </li>
+                        <span class="quan">Qty: <?php echo $row['quantity']; ?></span>
+                        <hr>
+                        <?php $total_price += ($row['price'] * $row['quantity']); ?>
+                    <?php endwhile; ?>
+                </ul>
+                <p> Total:   $<?php echo number_format($total_price, 2); ?></p>
+            </div>
 
-        <div class="cart-items">
-            <h4> Price</h4>
-            <ul>
-                <?php while ($row = $result->fetch_assoc()): ?>
-                    <li>
-                        <span><?php echo $row['title']; ?></span>
-                        <span>$<?php echo number_format($row['price'] * $row['quantity'], 2); ?></span>
-                    </li>
-                    <span class="quan">Qty: <?php echo $row['quantity']; ?></span>
-                    <hr>
-                    <?php $total_price += ($row['price'] * $row['quantity']); ?>
-                <?php endwhile; ?>
-            </ul>
-            <p> Total:   $<?php echo number_format($total_price, 2); ?></p>
-        </div>
+            <form method="POST" action="../backend/process_checkout.php">
+                <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                <input type="hidden" name="total_price" value="<?php echo $total_price; ?>">
 
-        <form method="POST" action="../backend/process_checkout.php">
-            <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-            <input type="hidden" name="total_price" value="<?php echo $total_price; ?>">
+                <label for="address">Shipping Address:</label>
+                <textarea name="address" required></textarea>
 
-            <label for="address">Shipping Address:</label>
-            <textarea name="address" required></textarea>
+                <button type="submit" class="checkout-btn">Place Order</button>
+            </form>
+        <?php endif; ?>
 
-            <button type="submit" class="checkout-btn">Place Order</button>
-        </form>
     </div>
 
 </body>
