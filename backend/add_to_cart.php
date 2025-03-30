@@ -25,6 +25,6 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 
-header("Location: ../frontend/index.html");
+header("Location: ../frontend/index.php");
 exit();
 ?>

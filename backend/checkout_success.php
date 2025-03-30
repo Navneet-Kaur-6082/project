@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../database/index.html");
+    header("Location: ../database/index.php");
     exit();
 }
 ?>
@@ -18,7 +18,7 @@ if (!isset($_SESSION['user_id'])) {
     <div class="order-placed-container">
         <h2>Order Placed Successfully!</h2>
         <p>Thank you for shopping with us. Your order is being processed.</p>
-        <a href="../frontend/index.html" class="continue-shopping-btn">Continue Shopping</a>
+        <a href="../frontend/index.php" class="continue-shopping-btn">Continue Shopping</a>
     </div>
 </body>
 </html>

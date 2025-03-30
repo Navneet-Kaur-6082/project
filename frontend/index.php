@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,9 +42,15 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link logout-link" href="../backend/login.php"
-                >Login</a
-              >
+                <?php 
+                    session_start();
+                    if (isset($_SESSION['user_id'])) {
+                        echo "<a class='nav-link logout-link' href='../backend/logout.php'>Logout</a>";
+                    } else {
+                        echo "<a class='nav-link logout-link' href='../backend/login.php'>Login</a>";
+                    }
+                ?>
+
             </li>
           </ul>
         </div>
@@ -82,5 +89,6 @@
 
       document.addEventListener("DOMContentLoaded", fetchBooks);
     </script>
+    <?php include '../backend/index.php'; ?>
   </body>
 </html>

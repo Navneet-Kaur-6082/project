@@ -1,15 +1,13 @@
-<?php session_start();
+<?php
+session_start();
 include '../database/db.php';
 
-// Redirect if user is not logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../frontend/index.html");
     exit();
 }
 
 $user_id = $_SESSION['user_id'];
-
-// Fetch cart items for logged-in user
 $sql = "SELECT c.cart_id, b.title, b.price, c.quantity 
         FROM cart c 
         JOIN books b ON c.book_id = b.book_id 
@@ -36,19 +34,19 @@ $total_price = 0;
             <a href="../frontend/index.html" class="back-btn">Go Back to Homepage</a>
         <?php else: ?>
             <div class="cart-items">
-                <h4> Price</h4>
+                <h4>Price</h4>
                 <ul>
                     <?php while ($row = $result->fetch_assoc()): ?>
                         <li>
                             <span><?php echo $row['title']; ?></span>
                             <span>$<?php echo number_format($row['price'] * $row['quantity'], 2); ?></span>
                         </li>
-                        <span class="quan">Qty: <?php echo $row['quantity']; ?></span>
+                        <li>Qty: <?php echo $row['quantity']; ?></li>
                         <hr>
                         <?php $total_price += ($row['price'] * $row['quantity']); ?>
                     <?php endwhile; ?>
                 </ul>
-                <p> Total:   $<?php echo number_format($total_price, 2); ?></p>
+                <p>Total: $<?php echo number_format($total_price, 2); ?></p>
             </div>
 
             <form method="POST" action="../backend/process_checkout.php">
@@ -57,7 +55,15 @@ $total_price = 0;
 
                 <label for="address">Shipping Address:</label>
                 <textarea name="address" required></textarea>
-
+                <div class="payment-methods">
+                <label for="payment_method">Choose Payment Method:</label>
+                    <select name="payment_method" id="payment_method">
+                        <option value="credit_card" selected>Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="bank_transfer">Bank Transfer</option>
+                        <option value="cod">Cash on Delivery</option>
+                     </select>
+                    </div>
                 <button type="submit" class="checkout-btn">Place Order</button>
             </form>
         <?php endif; ?>

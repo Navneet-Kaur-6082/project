@@ -1,23 +1,24 @@
 <?php
 session_start();
 include '../database/db.php';
-
-// Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
 
 $user_id = $_SESSION['user_id'];
-
-// Fetch user details
-$user_sql = "SELECT name, email, phone, address FROM users WHERE user_id = $user_id";
-$user_result = $conn->query($user_sql);
+$user_sql = "SELECT name, email, phone, address, role FROM users WHERE user_id = ?";
+$stmt = $conn->prepare($user_sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$user_result = $stmt->get_result();
 $user = $user_result->fetch_assoc();
-
-// Fetch all orders for the logged-in user
-$order_sql = "SELECT * FROM orders WHERE user_id = $user_id ORDER BY created_at DESC";
-$order_result = $conn->query($order_sql);
+$is_admin = ($user['role'] === 'admin');
+$order_sql = "SELECT * FROM orders WHERE user_id = ? ORDER BY created_at DESC";
+$stmt = $conn->prepare($order_sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$order_result = $stmt->get_result();
 ?>
 
 <!DOCTYPE html>
@@ -63,12 +64,14 @@ $order_result = $conn->query($order_sql);
                 </tr>
                 <?php } ?>
             </table>
-
-            <a href="../frontend/index.html" class="back-btn">Go back to Home Page</a>
         <?php } else { ?>
             <p>You have no orders yet.</p>
-            <a href="../frontend/index.html" class="back-btn">Go back to Home Page</a>
         <?php } ?>
+        <?php if ($is_admin): ?>
+            <a href="admin_panel.php" class="back-btn">Go to Admin Panel</a>
+        <?php endif; ?>
+        <a href="../frontend/index.php" class="back-btn">Go back to Home Page</a>
     </div>
+
 </body>
 </html>

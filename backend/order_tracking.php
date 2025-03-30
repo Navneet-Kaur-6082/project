@@ -1,15 +1,11 @@
 <?php
 include '../database/db.php';
-
-// Check if order_id is provided
 if (!isset($_GET['order_id'])) {
     echo "Invalid request.";
     exit();
 }
 
 $order_id = intval($_GET['order_id']);
-
-// Fetch tracking information for the order
 $sql = "SELECT * FROM order_tracking WHERE order_id = $order_id ORDER BY updated_at DESC";
 $result = $conn->query($sql);
 ?>
