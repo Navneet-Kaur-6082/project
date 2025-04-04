@@ -57,4 +57,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <p class="mt-3">Already have an account? <a href="login.php" class="login-link">Login here</a></p>
 </div>
 
-</
+</body>
+</html>

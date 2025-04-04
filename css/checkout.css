@@ -6,8 +6,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+  height: auto;
 }
+
 .checkout-container {
     width: 50%;
     background: rgba(255, 255, 255, 0.2);
@@ -17,7 +18,7 @@ body {
     animation: fadeIn 0.5s ease-in-out;
     color: white;
     text-align: center;
-    margin-top: 10px !important;
+    margin-top: 40px !important;
     margin-bottom: 10px;
 }
 .checkout-container a{
@@ -100,7 +101,8 @@ textarea:focus {
     padding: 12px;
     font-size: 18px;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
     border-radius: 5px;
     transition: 0.3s ease-in-out;
     text-transform: uppercase;
@@ -109,8 +111,6 @@ textarea:focus {
 .checkout-btn:hover {
     background: linear-gradient(90deg, #ff4500, #ff8c00);
 }
-
-
 
 .back-btn {
     display: inline-block;
@@ -142,21 +142,22 @@ textarea:focus {
     background-color: #f9f9f9;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-
-/* Change background color on hover */
 #payment_method:hover {
     background-color: #f1f1f1;
     border-color: #888;
 }
 
-/* Change border color on focus */
 #payment_method:focus {
     border-color: #ff8c00;
     outline: none;
 }
 
-/* Custom option styles */
 #payment_method option {
     padding: 8px;
     font-size: 16px;
+}
+.btn-more{
+    color: #ff8c00 !important;
+    margin-top: 20px !important;
+    text-align: center;
 }

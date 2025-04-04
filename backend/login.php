@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $error_message = "Invalid password.";
         }
     } else {
-        $error_message = "No account found with that email.";
+        $error_message = "No account found with this email.";
     }
 
     $stmt->close();
@@ -66,12 +66,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="login-container">
     <h2 class="mb-4">Login to <span style="background: linear-gradient(90deg, #ff8c00, #ff4500); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Shelfy</span></h2>
-    
+
     <?php if ($login_success): ?>
         <p class="message">Login successful! Redirecting...</p>
-    <?php elseif ($error_message): ?>
-        <p class="error"><?php echo $error_message; ?></p>
-    <?php else: ?>
+    <?php endif; ?>
+
+    <?php if (!$login_success): ?>
+        <?php if (!empty($error_message)): ?>
+            <p class="error"><?php echo $error_message; ?></p>
+        <?php endif; ?>
+        
         <form method="post">
             <div class="mb-3">
                 <input type="email" class="form-control" name="email" placeholder="Email" required>

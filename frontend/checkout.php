@@ -3,7 +3,7 @@ session_start();
 include '../database/db.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../frontend/index.html");
+    header("Location: ../backend/login.php");
     exit();
 }
 
@@ -31,7 +31,6 @@ $total_price = 0;
         <h2>Checkout</h2>
         <?php if ($result->num_rows == 0): ?>
             <p>Your cart is empty.</p>
-            <a href="../frontend/index.html" class="back-btn">Go Back to Homepage</a>
         <?php else: ?>
             <div class="cart-items">
                 <h4>Price</h4>
@@ -67,8 +66,7 @@ $total_price = 0;
                 <button type="submit" class="checkout-btn">Place Order</button>
             </form>
         <?php endif; ?>
-
+        <a class="btn-more" href="index.php">Wants to add more books?</a>
     </div>
-
 </body>
 </html>

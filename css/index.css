@@ -134,3 +134,47 @@ button{
 button:hover {
     background: linear-gradient(90deg, #ff4500, #ff8c00);
 }
+
+
+
+
+.admin-nav {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.admin-nav h2{
+    background: linear-gradient(90deg, #ff8c00, #ff4500);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    padding-left: 30px;
+}
+.admin-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.admin-nav ul li {
+    margin-right: 20px;
+}
+
+.admin-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+
+.admin-nav ul li a:hover {
+    color: #ff8c00;
+    text-decoration: none;
+    font-weight: bold;
+}

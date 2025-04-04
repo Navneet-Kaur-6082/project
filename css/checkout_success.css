@@ -54,21 +54,4 @@ body {
     transform: translateY(2px);
 }
 
-@media (max-width: 768px) {
-    .order-placed-container {
-        width: 90%;
-        padding: 20px;
-    }
 
-    .order-placed-container h2 {
-        font-size: 28px;
-    }
-
-    .order-placed-container p {
-        font-size: 16px;
-    }
-
-    .continue-shopping-btn {
-        font-size: 16px;
-    }
-}
